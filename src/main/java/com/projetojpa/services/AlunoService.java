@@ -31,6 +31,14 @@ public class AlunoService {
 		public List<Aluno> buscarCidadeERenda(String cidade, Double renda){
 			return AlunoRepository.findByCidadeAndRenda(cidade, renda);
 		}
+		//query 
+		public List<Aluno> findByNome(String nome){
+			return AlunoRepository.findByNome(nome);
+		}
+		//query 
+		public List<Aluno> findByNomeCompletoLike(String nomeCompleto){
+			return AlunoRepository.findByNomeLike(nomeCompleto);
+		}
 	
 	    public List<Aluno> getAllAluno() {
 	        return AlunoRepository.findAll();

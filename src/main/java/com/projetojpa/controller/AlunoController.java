@@ -46,6 +46,16 @@ public class AlunoController {
 		List<Aluno> alunos = AlunoService.buscarCidadeERenda(cidade, renda);
 		return ResponseEntity.ok(alunos);
 	}
+	//query
+	@GetMapping("/nome/{nome}")
+	public List<Aluno> findAlunosPorNome(@PathVariable  String nome){
+		return AlunoService.findByNome(nome);
+	}
+	//query
+	@GetMapping("/nome-Completo/{nomeCompleto}")
+	public List<Aluno> findAlunosPorNomeCompleto(@PathVariable  String nomeCompleto){
+		return AlunoService.findByNomeCompletoLike(nomeCompleto);
+	}
 
 	@GetMapping("/{id}") 
 	public ResponseEntity<Aluno> buscaAlunoControlId(@PathVariable Long id){ 
